@@ -20,7 +20,7 @@ const CategoryCard = (props) => {
         <p>{strCategoryDescription.slice(0,100)}...</p>
       </div>
       <div className="card-action">
-        <Link to={`/category/${id}`} className="btn">
+        <Link to={`/category/${title}`} className="btn">
           Watch Category{" "}
         </Link>
       </div>

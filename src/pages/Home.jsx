@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../apiUrl";
 import { CategoryList } from "../components/CategoryList";
+import { NotFound } from "./NotFound";
 
 const Home = () => {
   const [catalog, setCatalog] = useState([]);
@@ -11,7 +12,11 @@ const Home = () => {
     });
   }, []);
 
-  return <div>{!catalog.length ? "" : <CategoryList catalog={catalog} />}</div>;
+  return (
+    <div>
+      {!catalog.length ? <NotFound /> : <CategoryList catalog={catalog} />}
+    </div>
+  );
 };
 
 export { Home };
