@@ -24,9 +24,17 @@ const Home = () => {
   useEffect(() => {
     getAllCategories().then((data) => {
       setCatalog(data.categories);
-      setFilteredCatalog(data.categories);
+      setFilteredCatalog(
+        search
+          ? data.categories.filter((item) =>
+              item.strCategory
+                .toLowerCase()
+                .includes(search.split("=")[1].toLowerCase())
+            )
+          : data.categories
+      );
     });
-  }, []);
+  }, [search]);
 
   return (
     <div>

@@ -12,10 +12,7 @@ const Search = ({ cb = Function.prototype }) => {
   const handleSubmit = () => {
     cb(value);
   };
-  //   useEffect(() => {
-  //     getAllCategories;
-  //   }, []);
-
+  
   return (
     <div className="row">
       <div className="input-field col s12">
